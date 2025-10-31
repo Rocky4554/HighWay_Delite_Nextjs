@@ -190,9 +190,9 @@ The app will be running on 👉 **http://localhost:3000**
 
 ## 🔗 Live Demo
 
-🌐 **Live URL**: [https://highway-delite.vercel.app](https://highway-delite.vercel.app)
+🌐 **Live URL**: [https://high-way-delite-nextjs.vercel.app](https://high-way-delite-nextjs.vercel.app)
 
-📁 **GitHub Repo**: [https://github.com/your-username/highway-delite](https://github.com/your-username/highway-delite)
+📁 **GitHub Repo**: [https://github.com/Rocky4554/HighWay_Delite_Nextjs](https://github.com/Rocky4554/HighWay_Delite_Nextjs)
 
 ---
 
@@ -201,9 +201,9 @@ The app will be running on 👉 **http://localhost:3000**
 **Raunak Kumar**  
 *Frontend / Fullstack Developer*
 
-📧 Email: [raunak@example.com](mailto:raunak@example.com)  
-💼 LinkedIn: [linkedin.com/in/raunak-kumar](https://linkedin.com/in/raunak-kumar)  
-🐙 GitHub: [github.com/raunak-kumar](https://github.com/raunak-kumar)
+📧 Email: [kumarraunak085@gmail.com](mailto:kumarraunak085@gmail.com)  
+💼 LinkedIn: [https://www.linkedin.com/in/raunak-kumar54/](https://www.linkedin.com/in/raunak-kumar54/https://github.com/Rocky4554)  
+🐙 GitHub: [https://github.com/Rocky4554](https://github.com/Rocky4554)
 
 ---
 
