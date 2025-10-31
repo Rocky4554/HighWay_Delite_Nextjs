@@ -1,133 +1,149 @@
-🌍 HighWay Delite: Experiences & Slot
+HighWay Delite: Experiences & Slots
 
-A full-stack **Next.js + MongoDB** web application that allows users to explore curated travel experiences, select dates and time slots, and complete bookings seamlessly.  
-This project fulfills the **Fullstack Intern Assignment** requirements — covering end-to-end frontend and backend integration, API design, and clean UI implementation.
+A full-stack Next.js + MongoDB web application that allows users to explore curated travel experiences, select available dates and time slots, and complete bookings seamlessly.
 
----
+This project fulfills the Fullstack Intern Assignment requirements — covering end-to-end frontend and backend integration, API design, and a clean, responsive UI.
 
-## 🚀 Tech Stack
+🚀 Tech Stack
+🖥️ Frontend
 
-**Frontend:**
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Shadcn/UI Components
-- Axios (for API calls)
+Next.js (App Router)
 
-**Backend:**
-- Next.js API Routes (Node.js + Express-style handlers)
-- MongoDB with Mongoose
-- Environment Variables for secure DB connection
+TypeScript
 
-**Deployment:**
-- Vercel (Frontend)
-- MongoDB Atlas (Database)
+Tailwind CSS
 
----
+Shadcn/UI Components
 
-## 📂 Folder Structure
+Axios for API calls
 
-bookit/
+⚙️ Backend
+
+Next.js API Routes (Node.js + Express-style)
+
+MongoDB with Mongoose
+
+Environment Variables for secure configuration
+
+☁️ Deployment
+
+Vercel (Frontend)
+
+MongoDB Atlas (Database)
+
+📂 Folder Structure
+highway-delite/
 ├── app/
-│ ├── api/
-│ │ ├── experiences/
-│ │ │ ├── route.ts
-│ │ │ └── [id]/route.ts
-│ │ ├── bookings/
-│ │ │ └── route.ts
-│ │ └── promo/
-│ │ └── route.ts
-│ ├── experience/[id]/page.tsx
-│ ├── checkout/page.tsx
-│ ├── order-confirmed/page.tsx
-│ ├── layout.tsx
-│ ├── globals.css
-│ └── page.tsx
+│   ├── api/
+│   │   ├── experiences/
+│   │   │   ├── route.ts
+│   │   │   └── [id]/route.ts
+│   │   ├── bookings/
+│   │   │   └── route.ts
+│   │   └── promo/
+│   │       └── route.ts
+│   ├── experience/
+│   │   └── [id]/page.tsx
+│   ├── checkout/
+│   │   └── page.tsx
+│   ├── order-confirmed/
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── globals.css
+│   └── page.tsx
+│
 ├── components/
-│ ├── ExperienceCard.tsx
-│ ├── DateTimeSelector.tsx
-│ ├── BillingSummary.tsx
-│ └── Header.tsx
+│   ├── Header.tsx
+│   ├── ExperienceCard.tsx
+│   ├── DateTimeSelector.tsx
+│   ├── BillingSummary.tsx
+│   └── (other UI components)
+│
 ├── lib/
-│ ├── db.ts
-│ ├── models/
-│ │ ├── Experience.ts
-│ │ └── Booking.ts
-│ └── types.ts
+│   ├── db.ts
+│   ├── models/
+│   │   ├── Experience.ts
+│   │   └── Booking.ts
+│   └── types.ts
+│
+├── public/
+│   └── (images, icons, assets)
+│
 ├── .env.local
 ├── package.json
-└── tsconfig.json
+├── tsconfig.json
+└── README.md
 
-yaml
-Copy code
+⚙️ Environment Variables
 
----
+Create a file named .env.local in your project root and add the following:
 
-## ⚙️ Environment Variables
+MONGODB_URI=mongodb+srv://Raunak:vnNniNcBRM4HmapU@cluster0.etacmzo.mongodb.net/BookingSite?retryWrites=true&w=majority&appName=Cluster0
 
-Create a `.env.local` file in your project root:
+NEXT_PUBLIC_URL=http://localhost:3000
 
-```bash
-MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_API_URL=http://localhost:3000
 🧠 Features
+
 ✅ Browse curated travel experiences
-✅ View details, description, images, and available slots
-✅ Select date and time with real-time sold-out indicators
-✅ Dynamic Billing Summary with quantity, taxes, and total
-✅ Confirm and store bookings in MongoDB
-✅ Responsive, mobile-friendly, and Figma-accurate UI
+✅ View descriptions, locations, and pricing
+✅ Choose date and time slots (with sold-out status)
+✅ Dynamic billing summary (quantity, subtotal, taxes, total)
+✅ Confirm bookings — saved to MongoDB
+✅ Fully responsive, mobile-friendly UI
+✅ Matches Figma design specifications
 
 🧩 API Endpoints
 Method	Endpoint	Description
 GET	/api/experiences	Fetch all experiences
-GET	/api/experiences/:id	Get details & slots for one experience
+GET	/api/experiences/:id	Fetch single experience details
 POST	/api/bookings	Submit a new booking
 POST	/api/promo/validate	Validate promo codes
-
 🪄 Run Locally
-Clone the project:
+1️⃣ Clone the repository
+git clone https://github.com/your-username/highway-delite.git
+cd highway-delite
 
-bash
-Copy code
-git clone https://github.com/your-username/bookit.git
-cd bookit
-Install dependencies:
-
-bash
-Copy code
+2️⃣ Install dependencies
 npm install
-Run the development server:
 
-bash
-Copy code
+3️⃣ Add your .env.local
+
+Make sure your MongoDB URI and public URL are added as shown above.
+
+4️⃣ Run the development server
 npm run dev
-The app will run at 👉 http://localhost:3000
+
+
+The app will be running on 👉 http://localhost:3000
 
 🖼️ Screenshots
 🏠 Home Page
-Explore experiences and browse by category.
 
+Explore experiences and browse curated categories
 
 📖 Experience Details Page
-Select date, time, and view pricing.
 
+Choose date, time, and view pricing with real-time slot availability
 
 💳 Checkout Page
-Confirm booking, enter user info, and apply promo codes.
 
+Confirm booking, adjust quantity, and apply promo codes
 
 ✅ Order Confirmed Page
-Display final booking confirmation.
 
+Display booking confirmation with reference ID
 
 🔗 Live Demo
-🌐 Live URL: https://bookit.vercel.app
-📁 GitHub Repo: https://github.com/your-username/bookit
+
+🌐 Live URL: https://highway-delite.vercel.app
+
+📁 GitHub Repo: https://github.com/your-username/highway-delite
 
 👨‍💻 Author
+
 Raunak Kumar
 Frontend / Fullstack Developer
 
-📧 your-email@example.com
+📧 raunak@example.com
+
 💼 LinkedIn
