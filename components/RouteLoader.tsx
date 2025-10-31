@@ -1,24 +1,15 @@
+// app/loading.tsx
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
-export default function RouteLoader(): JSX.Element {
-  const pathname = usePathname();
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 400);
-    return () => clearTimeout(timeout);
-  }, [pathname]);
-
-  if (!loading) return null;
-
+export default function GlobalLoading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white/70 backdrop-blur-sm z-50 transition-opacity duration-200">
-      <Loader2 className="w-8 h-8 animate-spin text-gray-800" />
+    <div className="flex h-screen w-full items-center justify-center bg-white">
+      <div className="flex flex-col items-center space-y-3">
+        <Loader2 className="h-10 w-10 animate-spin text-gray-600" />
+        <p className="text-gray-600 text-sm font-medium">Loading...</p>
+      </div>
     </div>
   );
 }
