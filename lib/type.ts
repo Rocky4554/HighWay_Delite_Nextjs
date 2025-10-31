@@ -16,6 +16,7 @@ export interface Experience {
   description: string;
   minAge: number;
   slots: Slot[];
+  about: string;
 }
 
 export interface BookingData {

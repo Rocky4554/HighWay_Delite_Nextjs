@@ -2,52 +2,39 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
-interface BillingSummaryProps {
-  // Common props (used in ExperienceClient)
+interface BillingSummaryStaticProps {
+  title?: string;
+  date?: string;
+  time?: string;
   basePrice?: number;
-  price?: number;
   quantity?: number;
   subtotal?: number;
   taxes?: number;
   total?: number;
-  onQuantityChange?: (quantity: number) => void;
-  onConfirm?: () => void; // ✅ made optional
-  isDateTimeSelected?: boolean;
-
-  // Extra props (used in CheckoutPage)
-  title?: string;
-  date?: string;
-  time?: string;
   promoCode?: string;
   discount?: number;
-  onApplyPromo?: (code: string) => void;
 }
 
-export default function BillingSummary({
+export default function BillingSummaryStatic({
+  title,
+  date,
+  time,
   basePrice = 0,
-  price = 0,
   quantity = 1,
   subtotal = 0,
   taxes = 0,
   total = 0,
-  onQuantityChange = () => {},
-  onConfirm,
-  isDateTimeSelected = false,
-  title,
-  date,
-  time,
   promoCode,
   discount = 0,
-}: BillingSummaryProps) {
+}: BillingSummaryStaticProps) {
   return (
     <Card
       className="relative bg-[#EFEFEF] rounded-[12px] w-[387px] p-[24px] flex flex-col justify-between shadow-sm"
       style={{ opacity: 1, transform: "rotate(0deg)" }}
     >
       <div className="space-y-3">
-        {/* Optional Info (used in checkout) */}
+        {/* Optional Info */}
         {(title || date || time) && (
           <div className="border-b border-gray-300 pb-2 mb-2">
             {title && <p className="text-[16px] font-medium text-black">{title}</p>}
@@ -64,28 +51,10 @@ export default function BillingSummary({
           </span>
         </div>
 
-        {/* Quantity */}
+        {/* Quantity (static) */}
         <div className="flex justify-between items-center text-[14px] text-gray-700">
           <span>Quantity</span>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-6 w-6 p-0"
-              onClick={() => onQuantityChange(Math.max(1, (quantity || 1) - 1))}
-            >
-              −
-            </Button>
-            <span className="min-w-[24px] text-center text-black">{quantity}</span>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-6 w-6 p-0"
-              onClick={() => onQuantityChange((quantity || 0) + 1)}
-            >
-              +
-            </Button>
-          </div>
+          <span className="text-black">{quantity}</span>
         </div>
 
         {/* Subtotal */}
@@ -116,21 +85,6 @@ export default function BillingSummary({
           <span>₹{total.toLocaleString("en-IN")}</span>
         </div>
       </div>
-
-      {/* Confirm Button — only renders if onConfirm is provided */}
-      {onConfirm && (
-        <Button
-          className={`w-full h-[48px] text-[16px] rounded-[8px] mt-3 ${
-            !isDateTimeSelected
-              ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-              : "bg-yellow-400 text-black hover:bg-yellow-500"
-          }`}
-          disabled={!isDateTimeSelected}
-          onClick={onConfirm}
-        >
-          Confirm
-        </Button>
-      )}
     </Card>
   );
 }

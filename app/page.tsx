@@ -9,7 +9,7 @@ async function getExperiences(): Promise<Experience[]> {
     const experiences = await ExperienceModel.find().select('-slots').lean();
     
     // Convert MongoDB documents to plain objects and ensure _id is a string
-    const serializedExperiences = experiences.map((exp) => ({
+    const serializedExperiences = experiences.map((exp:any) => ({
       ...exp,
       _id: exp._id.toString(),
     }));

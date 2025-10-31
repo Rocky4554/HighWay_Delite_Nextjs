@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 
-// Define promo codes with their types and values
+
 const PROMO_CODES = {
-  // 10% off, no minimum
+ 
   'SAVE10': { type: 'percent', value: 10, minAmount: 0 },
-  // Flat ₹100 off, minimum ₹500 order
-  'FLAT100': { type: 'fixed', value: 100, minAmount: 500 },
-  // 20% off for orders over ₹1000
-  'BIG20': { type: 'percent', value: 20, minAmount: 1000 }
+ 
+  'FLAT500': { type: 'fixed', value: 500, minAmount: 1000 },
+ 
+  'BIG20': { type: 'percent', value: 50, minAmount: 400 }
 } as const;
 
 type PromoCode = keyof typeof PROMO_CODES;
